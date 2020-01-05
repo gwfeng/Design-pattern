@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LOVE YOU</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css" >
+    <script src="https://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js" ></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+<body>
+<div class="container">
+    <div class="row col-md-3"></div>
+    <div class="col-md-6 col-xs-12">    <div class="row col-md-6" >
+
+        <p style="line-height: 50px;font-size: 10px;">“小姐姐，喜欢你很久了”</p>
+        <div class="row question">>
+            <p style="line-height: 50px;font-size: 20px;">做我女朋友好不好？</p>
+        </div>
+        <div class="col-md-6 col-xs-12">
+            <img src="http://chuantu.xyz/t6/702/1563761899x2073530527.png" alt="" style="height: 200px;">
+        </div>
+    </div>
+        <div class="row question" style="margin-top: 20px;">
+            <div class="col-md-6 col-xs-6" style="text-align: center;">
+                <button type="button" class="btn btn-success" style="width: 80%" id="no">好</button>
+            </div>
+            <div class="col-md-6 col-xs-6" style="text-align: center;">
+                <button type="button" class="btn btn-danger" style="width: 80%" id="ok">不好</button>
+            </div>
+        </div>
+        <div class="col-md-12 col-xs-12 hide" id="success">
+            <img src="http://chuantu.xyz/t6/702/1563761822x2073530527.gif" alt="" style="width: 100%;">
+        </div>
+    </div>
+
+    <div class="row col-md-6"></div>
+    <p id="typing" style="text-align: center;display:none">
+        两个人在一起时间久 了,就像左手和右手
+        即使不再相爱,也会选择相守
+        因为放弃这么多年的时光和付出需要很大的勇气.
+        你还是会牵着左手或右手走下去,
+        也许生命里会出现爱你或你爱的人,但那终归是过客,
+        幸福真的和爱情无关。。。。。。
+        有的人,你看了一辈子,却忽略了一辈子;
+        有的人,你看了一眼,却影响到你的一生</p>
+</div>
+<script>
+    var i=1;
+    var ok=false;
+
+
+    var text;//p标签里对应的字符串
+    var index = 0;//text字符串的下标
+    var id;//setTimeout()的返回值,用于关闭clearTimeout(id)
+    function typing()
+    {
+        text = $("#typing").text();
+        $("#typing").text("");
+        $("#typing").show();
+        typed();
+    }
+    result = "";
+    function typed(){
+        result += text.charAt(index);
+        $("#typing").text(result + (index & 1 ? "_" : " "));
+        if(index <　text.length - 1)
+        {
+            index++;
+            id = setTimeout("typed()", 100);
+        }
+        else
+            clearTimeout(id);
+    }
+
+    $(document).ready(function(){
+        $("#no").click(function(){
+            alert("真的吗？你答应了？");
+            alert("就知道你会答应，哈哈哈，爱你哟~");
+            alert("接下来请不要眨眼...");
+            alert("有些话想对你说");
+            // typing();
+            window.location.href ="https://gwfeng.github.io/love7/index.html";
+            $(".question").addClass('hide');
+            $("#success").removeClass('hide');
+            ok=true;
+        });
+        $("#ok").click(function(){
+            switch(i){
+                case 1:
+                    alert("工资上交");
+                    break;
+                case 2:
+                    alert("家务全包");
+                    break;
+                case 3:
+                    alert("保大");
+                    break;
+                case 4:
+                    alert("我妈会游泳");
+                    break;
+                case 5:
+                    alert("不惹你生气");
+                    break;
+                case 6:
+                    alert("会撒娇 会卖萌");
+                    break;
+                case 7:
+                    alert("天冷给你煨脚");
+                    break;
+                case 8:
+                    alert("要诚实勇敢，实话实说");
+                    break;
+                default:s
+                    alert("答应我吧，嘿嘿");
+            }
+            i++;
+        });
+    });
+
+
+
+</script>
+</body>
+</html>
